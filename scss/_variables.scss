@@ -1,0 +1,47 @@
+$fontSize: 16px;
+$smPhoneBreakpoint: 575.98px; // from Bootstrap
+$mdPhoneBreakpoint: 767.98px;
+// grid
+$columnWidth: 8.125rem; // 130px
+$rowHeight: 8.125rem; // 130px
+$gap: 1.5625rem; // 25px
+// colors
+$bodyBgColor: hsl(120, 1%, 81%);
+$textColor: #434344;
+$cardGradientStartColor: #22ab93;
+$cardGradientStopColor:#19668d;
+$cardWinColor: hsl(130, 60%, 68%);
+$cardLoseColor: hsl(4, 90%, 65%);
+// title 
+$titleVerticalMargin: 2.4rem;
+$titleWideMargin: 1.7rem;
+$titleFontSize: 2.625rem; // 42px
+$titleLineHeight: 2.9375rem; // 47px
+// card
+$cardWidth: $columnWidth; // 130px
+$cardHeight: $rowHeight; // 130px
+$cardGap: 1.5625rem; // 25px;
+$cardPhoneLandSize: 18vh;
+$cardPhoneLandGap: 3vh;
+$cardBorder: 0.3125rem solid #fff; // 5px
+$cardBorderRadius: 0.5625rem; // 9px
+$cardBoxShadow: 1px 1px 5px rgba(0, 0, 0, .5);
+$cardPerspective:37.5rem; //600px
+$emojiSize: 4.6875em; //75px;
+// timer
+$timerFontSize: 2rem; //32px
+$timerLineHeight: 2.25rem; //36px
+$timerPaddings: 1.5rem;
+//dialog
+$dlgMinWidth: 21.875rem; // 350px
+$dlgTextSize: 3rem; //48px
+$dlgPaddings: 1.875rem; //30px
+// dialog button
+$dlgBtnHeight: 2.5rem; // 40px
+$dlgBtnTextSize: 1.25rem; // 20px
+$dlgBtnTextColor: #fff;
+$dlgBtnWidePaddings: 1.875rem; // 30px
+$dlgBtnHeighPaddings: .532rem; // 10px
+$dlgBtnBorderRadius: .5625rem; // 9px;
+$dlgBtnShadow: 1px 1px 1px rgba(0, 0, 0, .5);
+$dlgActiveBtnShadow: inset 2px 1px 8px rgba(0, 0, 0, .7);

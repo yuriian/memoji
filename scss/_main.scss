@@ -1,0 +1,48 @@
+html {
+  font-size: $fontSize;
+  @media only screen and (max-width: $mdPhoneBreakpoint) {
+    font-size: 13px;
+  }
+  @media only screen and (max-width: $smPhoneBreakpoint) {
+    font-size: 11px;
+  }
+}
+
+body {
+  margin: 0;
+  background: $bodyBgColor;
+  font-family: 'Arial', sans-serif;
+  color: $textColor;
+}
+
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  perspective: $cardPerspective;
+  margin: 0 auto;
+  width: 700px;
+}
+
+@supports(display: grid) {
+  .main {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-gap: $cardGap;
+    @media only screen and (max-width: $mdPhoneBreakpoint) and (orientation: landscape) {
+      grid-gap: $cardPhoneLandGap;
+    }
+    @media only screen and (max-width: $smPhoneBreakpoint) {
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
+}
+
+.title {
+  font-size: $titleFontSize;
+  font-family: Arial, sans-serif;
+  margin: $titleVerticalMargin 0 $titleWideMargin;
+  text-align: center;
+}

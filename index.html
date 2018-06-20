@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memoji</title>
+  <style>
+    html {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+      html {
+        font-size: 13px;
+      }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+      html {
+        font-size: 11px;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: #cecfce;
+      font-family: 'Arial', sans-serif;
+      color: #434344;
+    }
+
+    .main {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: center;
+      justify-content: center;
+      perspective: 37.5rem;
+      margin: 0 auto;
+      width: 700px;
+    }
+
+    @supports (display: grid) {
+      .main {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        grid-gap: 1.5625rem;
+      }
+      @media only screen and (max-width: 767.98px) and (orientation: landscape) {
+        .main {
+          grid-gap: 3vh;
+        }
+      }
+      @media only screen and (max-width: 575.98px) {
+        .main {
+          grid-template-columns: repeat(3, max-content);
+        }
+      }
+    }
+
+    .title {
+      font-size: 2.625rem;
+      /* line-height: 1.9375rem; */
+      font-family: Arial, sans-serif;
+      margin: 2.4rem 0 1.7rem;
+      text-align: center;
+    }
+
+    .card * {
+      box-sizing: border-box;
+    }
+
+    .card {
+      width: 8.125rem;
+      height: 8.125rem;
+      position: relative;
+      transform-style: preserve-3d;
+      margin: 0 12.5px 25px;
+    }
+
+    @media only screen and (max-width: 800px) and (orientation: landscape) {
+      .card {
+        width: 18vh;
+        height: 18vh;
+        font-size: .63rem;
+      }
+    }
+
+    @supports (display: grid) {
+      .card {
+        margin: 0;
+      }
+    }
+
+    .card__front {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 0.5625rem;
+      transform: rotateY(-180deg);
+    }
+
+    .card__back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(45deg, #22ab93, #19668d);
+      border: 0.3125rem solid #fff;
+      border-radius: 0.5625rem;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    @supports (display: grid) {
+      .card__back {
+        transition: transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25);
+      }
+    }
+
+    .timer {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .dialog {
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">Memoji</h1>
+  <main class="main" id="cardsContainer">
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+    <div class="card">
+      <div class="card__front"></div>
+      <div class="card__back"></div>
+    </div>
+  </main>
+  <div class="timer" id="timer">01 : 00</div>
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </noscript>
+  <script>
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function () {
+      window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+  </script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
